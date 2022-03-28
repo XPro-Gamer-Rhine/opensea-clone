@@ -1,0 +1,35 @@
+const colors = require('tailwindcss/colors');
+module.exports = {
+    content: [
+        './pages/**/*.{js,ts,jsx,tsx}',
+        './components/**/*.{js,ts,jsx,tsx}',
+    ],
+    darkMode: 'class',
+    theme: {
+        colors: {
+            emerald: colors.emerald,
+            indigo: colors.indigo,
+            yellow: colors.yellow,
+            slate: colors.slate,
+            zinc: colors.zinc,
+            neutral: colors.neutral,
+            stone: colors.stone,
+            amber: colors.amber,
+            lime: colors.lime,
+            teal: colors.teal,
+            cyan: colors.cyan,
+            sky: colors.sky,
+            violet: colors.violet,
+            fuchsia: colors.fuchsia,
+            rose: colors.rose,
+            pink: colors.pink,
+            // white: colors.white,
+            // gray: colors.gray,
+            // red: colors.red,
+            // black: colors.black,
+            blue: colors.blue,
+        },
+        extend: {},
+    },
+    plugins: [],
+};
