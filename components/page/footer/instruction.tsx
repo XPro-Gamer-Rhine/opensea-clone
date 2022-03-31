@@ -30,7 +30,7 @@ const Instruction = () => {
           1. Set up your wallet
         </h3>
         <p className="dark:text-jacarta-300">
-          Once you've set up your wallet of choice, connect it to OpenSeaby
+          Once youve set up your wallet of choice, connect it to OpenSeaby
           clicking the NFT Marketplacein the top right corner.
         </p>
       </div>

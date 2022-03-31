@@ -192,7 +192,6 @@ const Trending = () => {
                     type="checkbox"
                     defaultValue="checkbox"
                     name="check"
-                    defaultChecked=""
                     className="checked:bg-accent checked:focus:bg-accent checked:hover:bg-accent after:bg-jacarta-400 bg-jacarta-100 relative h-4 w-7 cursor-pointer appearance-none rounded-lg border-none shadow-none after:absolute after:top-0.5 after:left-0.5 after:h-3 after:w-3 after:rounded-full after:transition-all checked:bg-none checked:after:left-3.5 checked:after:bg-white focus:ring-transparent focus:ring-offset-0"
                   />
                 </span>

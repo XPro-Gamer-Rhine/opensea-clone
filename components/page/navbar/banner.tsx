@@ -16,7 +16,7 @@ const Banner = () => {
               Buy, sell and collect NFTs.
             </h1>
             <p className="mb-8 text-lg text-center dark:text-jacarta-300 md:text-left">
-              The world's largest digital marketplace for crypto
+              The world largest digital marketplace for crypto
               collectibles and non-fungible tokens
             </p>
             <div className="flex space-x-4">

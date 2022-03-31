@@ -1,6 +1,9 @@
 import React from 'react';
 
-const ItemDetails = () => {
+interface Props {
+  setModalOpen: (boolean: boolean) => void;
+}
+const ItemDetails: React.FC<Props> = ({ setModalOpen }) => {
   return (
     <section className="relative pt-12 pb-24 lg:py-24">
       <picture className="absolute inset-0 pointer-events-none -z-10 dark:hidden">
@@ -379,7 +382,10 @@ const ItemDetails = () => {
                   </div>
                 </div>
               </div>
-              <button className="inline-block w-full px-8 py-3 font-semibold text-center text-white transition-all rounded-full bg-accent shadow-accent-volume hover:bg-accent-dark">
+              <button
+                onClick={() => setModalOpen(true)}
+                className="inline-block w-full px-8 py-3 font-semibold text-center text-white transition-all rounded-full bg-accent shadow-accent-volume hover:bg-accent-dark"
+              >
                 Place Bid
               </button>
             </div>

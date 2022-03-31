@@ -144,7 +144,7 @@ const Modal: React.FC<Props> = ({
                       htmlFor="terms"
                       className="text-sm dark:text-jacarta-200"
                     >
-                      By checking this box, I agree to Xhibiter's{' '}
+                      By checking this box, I agree to Xhibiter
                       <a href="#" className="text-accent">
                         Terms of Service
                       </a>
