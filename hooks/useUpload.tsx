@@ -1,6 +1,5 @@
 import useGetContract from './useGetContract';
 import { ethers } from 'ethers';
-import { useState } from 'react';
 import useIPFS from './useIPFS';
 
 type UseUpload = [() => void];

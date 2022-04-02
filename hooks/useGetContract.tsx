@@ -1,9 +1,9 @@
-import { Signer } from 'ethers';
+import { ethers, Signer } from 'ethers';
 import { useEffect, useState } from 'react';
 import { useAccount, useContract, useProvider } from 'wagmi';
 import config from '../config/env-vars';
 import { marketplaceAddress } from '../config';
-const { NFT_MARKET } = config;
+const { NFT_MARKET, API_URL } = config;
 
 const useGetContract = () => {
   const [{ data: account }] = useAccount({
@@ -36,9 +36,19 @@ const useGetContract = () => {
     signerOrProvider: contractProvider,
   });
 
+  const publicProvider = new ethers.providers.JsonRpcProvider(
+    API_URL
+  );
+  const PublicContract = new ethers.Contract(
+    marketplaceAddress,
+    NFT_MARKET,
+    publicProvider
+  );
+
   return {
     Signer,
     Provider,
+    PublicContract,
     account,
   };
 };
