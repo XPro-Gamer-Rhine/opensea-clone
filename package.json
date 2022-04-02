@@ -36,7 +36,6 @@
         "wagmi": "^0.2.24"
     },
     "devDependencies": {
-        "@types/node": "17.0.23",
         "@types/react": "17.0.43",
         "@types/react-dom": "17.0.14",
         "@types/react-helmet": "^6.1.5",
