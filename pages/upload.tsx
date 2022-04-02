@@ -1,62 +1,15 @@
 import React, { useState } from 'react';
-import { create } from 'ipfs-http-client';
-import useGetContract from '../hooks/useGetContract';
-import { ethers } from 'ethers';
+import useUpload from '../hooks/useUpload';
+
 const Upload = () => {
   const [formInput, updateFormInput] = useState({
     price: '',
     name: '',
     description: '',
   });
-  const { Signer: contract } = useGetContract();
 
-  const [fileUrl, setFileUrl] = useState<string | null>(null);
-  const client = create('https://ipfs.infura.io:5001/api/v0');
-
-  async function onImageChange(e: any) {
-    const file = e.target.files[0];
-    try {
-      const added = await client.add(file, {
-        progress: (prog) => console.log(`received: ${prog}`),
-      });
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-
-      setFileUrl(url);
-    } catch (error) {
-      console.log('Error uploading file: ', error);
-    }
-  }
-
-  async function uploadToIPFS() {
-    const { name, description, price } = formInput;
-    if (!name || !description || !price || !fileUrl) return;
-    /* first, upload to IPFS */
-    const data = JSON.stringify({
-      name,
-      description,
-      image: fileUrl,
-    });
-    try {
-      const added = await client.add(data);
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      /* after file is uploaded to IPFS, return the URL to use it in the transaction */
-      console.log(url);
-      return url;
-    } catch (error) {
-      console.log('Error uploading file: ', error);
-    }
-  }
-
-  async function listNFTForSale() {
-    const url = await uploadToIPFS();
-    const price = ethers.utils.parseUnits(formInput.price, 'ether');
-    let listingPrice = await contract.getListingPrice();
-    listingPrice = listingPrice.toString();
-    let transaction = await contract.createToken(url, price, {
-      value: listingPrice,
-    });
-    const response = await transaction.wait();
-  }
+  const [fileUrl, setFileUrl] = useState<any | null>(null);
+  const [upload] = useUpload(fileUrl, formInput);
 
   return (
     <section className="relative py-24">
@@ -103,7 +56,7 @@ const Upload = () => {
                 accept="image/*,video/*,audio/*,webgl/*,.glb,.gltf"
                 id="file-upload"
                 className="absolute inset-0 z-20 cursor-pointer opacity-0"
-                onChange={onImageChange}
+                onChange={(e: any) => setFileUrl(e.target.files[0])}
               />
             </div>
           </div>
@@ -168,7 +121,7 @@ const Upload = () => {
             />
           </div>
           <button
-            onClick={listNFTForSale}
+            onClick={upload}
             className="bg-accent-lighter rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
           >
             Create
