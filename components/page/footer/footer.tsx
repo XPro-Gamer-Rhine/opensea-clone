@@ -3,10 +3,10 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-jacarta-900 page-footer">
-      <div className="container">
+      <div className="container ">
         <div className="grid grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
           <div className="col-span-3 md:col-span-4">
-            <a href="index.html" className="inline-block mb-6">
+            <a href={'/'} className="inline-block mb-6">
               <img
                 src="img/logo.png"
                 className="max-h-7 dark:hidden"
@@ -95,156 +95,15 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7">
-            <h3 className="mb-6 text-sm font-display text-jacarta-700 dark:text-white">
-              Marketplace
-            </h3>
-            <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  All NFTs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Art
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Music
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Domain Names
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Collectibles
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Virtual World
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-span-full sm:col-span-3 md:col-span-2">
-            <h3 className="mb-6 text-sm font-display text-jacarta-700 dark:text-white">
-              Company
-            </h3>
-            <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Explore
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Our Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  FAQ
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-span-full sm:col-span-3 md:col-span-2">
-            <h3 className="mb-6 text-sm font-display text-jacarta-700 dark:text-white">
-              My Account
-            </h3>
-            <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Authors
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Collection
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Author Profile
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-accent dark:hover:text-white"
-                >
-                  Create Item
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
         <div className="flex flex-col items-center justify-between py-8 space-y-2 sm:flex-row sm:space-y-0">
           <span className="text-sm dark:text-jacarta-400">
-            © Xhibiter — Made by
+            © NFT Market Place — Made by
             <a
-              href="https://deothemes.com"
+              href="https://github.com/XPro-Gamer-Rhine"
               className="hover:text-accent"
             >
-              DeoThemes
+              Rhine
             </a>
           </span>
           <ul className="flex flex-wrap space-x-4 text-sm dark:text-jacarta-400">

@@ -4,7 +4,6 @@ import { useAccount, useContract, useProvider } from 'wagmi';
 import config from '../config/env-vars';
 import { marketplaceAddress } from '../config';
 const { NFT_MARKET, API_URL } = config;
-
 const useGetContract = () => {
   const [{ data: account }] = useAccount({
     fetchEns: true,

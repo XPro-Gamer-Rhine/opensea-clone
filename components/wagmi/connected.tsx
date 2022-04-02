@@ -102,7 +102,7 @@ const Connected = () => {
             </div>
           </div>
           <a
-            href="user.html"
+            href={'/artist'}
             className="flex items-center px-5 py-2 space-x-2 transition-colors dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 rounded-xl"
           >
             <svg

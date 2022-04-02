@@ -5,8 +5,8 @@ interface Props {
   price: string;
   image: string;
   account: any;
-  buyNft: (args: any) => void;
-  nft: any;
+  buyNft: (args: any) => void | undefined;
+  nft: any | undefined;
 }
 
 const SingleItem: React.FC<Props> = ({

@@ -13,7 +13,7 @@ const Trending = () => {
                 'url(https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/26a1.png)',
             }}
           />
-          Trending categories
+          Trending
         </h2>
         <div className="flex flex-wrap items-center justify-between mb-8">
           <ul className="flex flex-wrap items-center">
@@ -134,7 +134,6 @@ const Trending = () => {
               </a>
             </li>
           </ul>
-
         </div>
         <ItemGroup />
       </div>

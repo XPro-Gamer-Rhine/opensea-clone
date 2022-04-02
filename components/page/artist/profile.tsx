@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemGroup from '../content/item/itemGroup';
+import ArtistNfts from './artistNfts';
 
 const ArtistPage = () => {
   return (
@@ -398,7 +398,7 @@ const ArtistPage = () => {
               role="tabpanel"
               aria-labelledby="items-tab"
             >
-              <ItemGroup />
+              <ArtistNfts />
             </div>
           </div>
         </div>

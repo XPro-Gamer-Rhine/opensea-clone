@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 z-20 w-full transition-colors js-page-header backdrop-blur">
       <div className="flex items-center px-6 py-6 xl:px-24">
-        <a href="index.html" className="shrink-0">
+        <a href={'/'} className="shrink-0">
           <img
             src="img/logo.png"
             className="max-h-7 dark:hidden"
@@ -121,18 +121,6 @@ const Navbar = () => {
                   data-bs-toggle="dropdown"
                 >
                   Home
-                  <i className="lg:hidden">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      className="w-4 h-4 dark:fill-white"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z" />
-                      <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-                    </svg>
-                  </i>
                 </a>
               </li>
               <li className="relative js-nav-dropdown nav-item dropdown group">
@@ -145,18 +133,6 @@ const Navbar = () => {
                   data-bs-toggle="dropdown"
                 >
                   Explore
-                  <i className="lg:hidden">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      className="w-4 h-4 dark:fill-white"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z" />
-                      <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-                    </svg>
-                  </i>
                 </a>
               </li>
               {account && (
