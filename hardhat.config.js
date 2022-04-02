@@ -5,7 +5,6 @@ require('@nomiclabs/hardhat-etherscan');
 const {
     KOVAN_PRIVATE_KEY,
     ETHERSCAN_API_KEY,
-    GOERLI_PRIVATE_KEY,
     COIN_MARKETCAP_API_KEY,
     NEXT_PUBLIC_NETWORK_NAME_KOVAN,
 } = process.env;

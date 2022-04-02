@@ -8,6 +8,7 @@ const envVars = {
     process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY
   ),
   NFT_MARKET: NFT_MARKET.abi,
+  DEPLOY_ADDRESS: String(process.env.NEXT_PUBLIC_DEPLOY_ADDRESS),
 };
 
 export default envVars;

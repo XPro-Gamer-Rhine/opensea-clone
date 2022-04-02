@@ -2,8 +2,7 @@ import { ethers, Signer } from 'ethers';
 import { useEffect, useState } from 'react';
 import { useAccount, useContract, useProvider } from 'wagmi';
 import config from '../config/env-vars';
-import { marketplaceAddress } from '../config';
-const { NFT_MARKET, API_URL } = config;
+const { NFT_MARKET, API_URL, DEPLOY_ADDRESS } = config;
 const useGetContract = () => {
   const [{ data: account }] = useAccount({
     fetchEns: true,
@@ -25,12 +24,12 @@ const useGetContract = () => {
 
   // instantiate contract
   const Signer = useContract({
-    addressOrName: marketplaceAddress,
+    addressOrName: DEPLOY_ADDRESS,
     contractInterface: NFT_MARKET,
     signerOrProvider: contractSigner,
   });
   const Provider = useContract({
-    addressOrName: marketplaceAddress,
+    addressOrName: DEPLOY_ADDRESS,
     contractInterface: NFT_MARKET,
     signerOrProvider: contractProvider,
   });
@@ -39,7 +38,7 @@ const useGetContract = () => {
     API_URL
   );
   const PublicContract = new ethers.Contract(
-    marketplaceAddress,
+    DEPLOY_ADDRESS,
     NFT_MARKET,
     publicProvider
   );
