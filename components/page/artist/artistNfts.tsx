@@ -22,8 +22,9 @@ const ArtistNfts = () => {
           image={nft.image}
           account={account}
           buyNft={() => {}}
-          nft={undefined}
+          nft={nft}
           key={i}
+          owner={nft.owner}
         />
       ))}
     </div>

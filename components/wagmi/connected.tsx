@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAccount, useBalance } from 'wagmi';
 import Davatar from '@davatar/react';
-import { LogoutIcon } from '@heroicons/react/solid';
 import Connect from './connect';
+import AddressCompressor from '../utils/addressCompressor';
 
 const Connected = () => {
   const [{ data: accountData }, disconnect] = useAccount({
@@ -14,13 +14,6 @@ const Connected = () => {
   });
 
   if (accountData) {
-    const splitAddress =
-      accountData.address?.substr(0, 6) +
-      `....` +
-      accountData.address?.substr(
-        accountData.address.length - 5,
-        accountData.address.length - 1
-      );
     return (
       <div className="relative js-nav-dropdown group-dropdown">
         <button
@@ -45,9 +38,11 @@ const Connected = () => {
             data-tippy-content="Copy"
           >
             <span className="max-w-[10rem] overflow-hidden text-ellipsis">
-              {accountData.ens?.name
-                ? accountData.ens?.name
-                : splitAddress}
+              {accountData.ens?.name ? (
+                accountData.ens?.name
+              ) : (
+                <AddressCompressor address={accountData.address} />
+              )}
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

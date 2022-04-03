@@ -39,7 +39,7 @@ const useFetchData = (): UseFetchData => {
 
   useEffect(() => {
     loadNFTs();
-  }, []);
+  }, [nfts]);
   return { nfts, isLoading };
 };
 

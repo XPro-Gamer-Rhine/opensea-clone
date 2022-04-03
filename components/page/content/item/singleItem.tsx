@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import useSellNft from '../../../../hooks/useSellNft';
 
 interface Props {
   name: string;
@@ -7,6 +8,7 @@ interface Props {
   account: any;
   buyNft: (args: any) => void | undefined;
   nft: any | undefined;
+  owner: string;
 }
 
 const SingleItem: React.FC<Props> = ({
@@ -16,7 +18,10 @@ const SingleItem: React.FC<Props> = ({
   account,
   buyNft,
   nft,
+  owner,
 }) => {
+  const [data, setData] = useState<any>(nft);
+  const [sellNft] = useSellNft();
   return (
     <article>
       <div className="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 block rounded-[1.25rem] border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
@@ -81,17 +86,36 @@ const SingleItem: React.FC<Props> = ({
             {price} ETH
           </span>
         </div>
-        {account && (
-          <div className="flex items-center justify-between mt-8">
-            <button
-              className="text-sm font-semibold text-accent font-display"
-              data-bs-toggle="modal"
-              onClick={() => buyNft(nft)}
-            >
-              Buy now
-            </button>
-          </div>
-        )}
+        {account &&
+          (account.address === owner ? (
+            <div className="flex flex-col items-center justify-between mt-8">
+              <input
+                type="text"
+                className="w-full py-3 mb-6 rounded-lg dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 hover:ring-2 dark:text-white"
+                placeholder="Asset Price"
+                onChange={(e: any) =>
+                  setData({ ...data, price: e.target.value })
+                }
+              />
+              <button
+                className="text-sm font-semibold text-accent font-display"
+                data-bs-toggle="modal"
+                onClick={() => sellNft(data, nft.tokenId)}
+              >
+                Sell now
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center justify-between mt-8">
+              <button
+                className="text-sm font-semibold text-accent font-display"
+                data-bs-toggle="modal"
+                onClick={() => buyNft(nft)}
+              >
+                Buy now
+              </button>
+            </div>
+          ))}
       </div>
     </article>
   );

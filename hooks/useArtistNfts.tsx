@@ -9,11 +9,9 @@ type UseArtistNfts = {
 const useArtistNfts = (): UseArtistNfts => {
   const [nfts, setNfts] = useState<any[]>([]);
   const { Signer: contract, account } = useGetContract();
-  console.log(contract);
   const loadNFTs = async () => {
     try {
       const data = await contract.fetchMyNFTs();
-      console.log(data);
       const items = await Promise.all(
         data.map(async (i: any) => {
           const tokenURI = await contract.tokenURI(i.tokenId);
