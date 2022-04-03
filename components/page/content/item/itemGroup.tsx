@@ -25,8 +25,7 @@ const ItemGroup = () => {
           account={account}
           buyNft={buyNft}
           nft={nft}
-          key={i}
-        />
+          key={i} owner={''}        />
       ))}
     </div>
   );
